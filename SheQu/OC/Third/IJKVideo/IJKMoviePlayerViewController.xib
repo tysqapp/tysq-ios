@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IJKVideoViewController">
+            <connections>
+                <outlet property="closeBtnTop" destination="nWj-Kl-zH8" id="4HT-Fj-b86"/>
+                <outlet property="mediaControl" destination="6" id="24"/>
+                <outlet property="view" destination="1" id="53"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139" y="85"/>
+        </view>
+        <view contentMode="scaleToFill" id="6" customClass="IJKMediaControl">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="54" userLabel="Overlay" customClass="UIControl">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="Panel: Bottom">
+                            <rect key="frame" x="0.0" y="200" width="480" height="100"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39" userLabel="View: Background">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40" userLabel="播放">
+                                    <rect key="frame" x="20" y="46.5" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="EfR-QZ-mvL"/>
+                                        <constraint firstAttribute="width" constant="50" id="L27-1V-XmK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" image="sq_bili_play">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClickPlay:" destination="-1" eventType="touchUpInside" id="45"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41" userLabel="Button: Pause">
+                                    <rect key="frame" x="20" y="46.5" width="50" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" image="sq_bili_pause">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onClickPause:" destination="-1" eventType="touchUpInside" id="46"/>
+                                    </connections>
+                                </button>
+                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="42" userLabel="Slider: Video Progress">
+                                    <rect key="frame" x="128" y="55" width="243" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="28" id="Gdf-L0-6k4"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="didSliderTouchCancel" destination="-1" eventType="touchCancel" id="uRn-za-g7e"/>
+                                        <action selector="didSliderTouchDown" destination="-1" eventType="touchDown" id="H8O-Ig-c5b"/>
+                                        <action selector="didSliderTouchUpInside" destination="-1" eventType="touchUpInside" id="vLS-zl-CBo"/>
+                                        <action selector="didSliderTouchUpOutside" destination="-1" eventType="touchUpOutside" id="sT2-dJ-Ff0"/>
+                                        <action selector="didSliderValueChanged" destination="-1" eventType="valueChanged" id="d2y-5f-s9f"/>
+                                    </connections>
+                                </slider>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVt-gj-80R">
+                                    <rect key="frame" x="429" y="56.5" width="31" height="30"/>
+                                    <state key="normal" title="全屏"/>
+                                    <connections>
+                                        <action selector="fullScreenBtnClick:" destination="-1" eventType="touchUpInside" id="Wg9-Lq-rpb"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="20:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44" userLabel="Label: Total Duration">
+                                    <rect key="frame" x="369" y="61" width="50" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="3dV-Vu-QpI"/>
+                                        <constraint firstAttribute="height" constant="21" id="HBF-9r-P37"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43" userLabel="Label: Current Time">
+                                    <rect key="frame" x="80" y="61" width="50" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="73f-Sc-kTv"/>
+                                        <constraint firstAttribute="width" constant="50" id="zQf-lf-1zO"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="43" firstAttribute="leading" secondItem="40" secondAttribute="trailing" constant="10" id="6zy-2E-H7h"/>
+                                <constraint firstItem="44" firstAttribute="leading" secondItem="42" secondAttribute="trailing" id="AgD-Fp-71y"/>
+                                <constraint firstItem="42" firstAttribute="leading" secondItem="43" secondAttribute="trailing" id="E3H-tv-2O0"/>
+                                <constraint firstAttribute="trailing" secondItem="PVt-gj-80R" secondAttribute="trailing" constant="20" id="L47-xF-ycd"/>
+                                <constraint firstItem="40" firstAttribute="leading" secondItem="38" secondAttribute="leading" constant="20" id="M68-J6-rZw"/>
+                                <constraint firstAttribute="bottom" secondItem="42" secondAttribute="bottom" constant="17" id="NTv-GC-qC0"/>
+                                <constraint firstAttribute="bottom" secondItem="44" secondAttribute="bottom" constant="18" id="RQq-8p-hFo"/>
+                                <constraint firstAttribute="height" constant="100" id="Rfu-iR-T9c"/>
+                                <constraint firstItem="43" firstAttribute="centerY" secondItem="40" secondAttribute="centerY" id="e9d-ZG-e1m"/>
+                                <constraint firstItem="PVt-gj-80R" firstAttribute="centerY" secondItem="44" secondAttribute="centerY" id="fbq-Ye-DOn"/>
+                                <constraint firstItem="40" firstAttribute="centerY" secondItem="41" secondAttribute="centerY" id="g2h-Qd-8eP"/>
+                                <constraint firstItem="40" firstAttribute="width" secondItem="41" secondAttribute="width" id="lcc-ze-b7e"/>
+                                <constraint firstItem="40" firstAttribute="height" secondItem="41" secondAttribute="height" id="nNo-zj-g0O"/>
+                                <constraint firstItem="PVt-gj-80R" firstAttribute="leading" secondItem="44" secondAttribute="trailing" constant="10" id="opc-L2-mG7"/>
+                                <constraint firstItem="40" firstAttribute="centerX" secondItem="41" secondAttribute="centerX" id="r6m-dK-1KZ"/>
+                                <constraint firstAttribute="bottom" secondItem="43" secondAttribute="bottom" constant="18" id="wIe-Gd-voK"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-0O-8Qx">
+                            <rect key="frame" x="0.0" y="20" width="60" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="dW7-mW-fMn"/>
+                                <constraint firstAttribute="width" constant="60" id="iv4-L9-tMl"/>
+                            </constraints>
+                            <state key="normal" image="sq_bili_close"/>
+                            <connections>
+                                <action selector="onClickDone:" destination="-1" eventType="touchUpInside" id="poh-oZ-BMo"/>
+                            </connections>
+                        </button>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sq_ijk_audio" translatesAutoresizingMaskIntoConstraints="NO" id="dez-i2-Pff">
+                            <rect key="frame" x="180" y="100" width="120" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="e1Z-IW-76G"/>
+                                <constraint firstAttribute="width" constant="120" id="e4d-aQ-wAe"/>
+                            </constraints>
+                        </imageView>
+                        <button hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgQ-Je-5Md">
+                            <rect key="frame" x="195" y="110" width="90" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="94k-B5-UIk"/>
+                                <constraint firstAttribute="width" constant="90" id="GsP-P6-AtE"/>
+                            </constraints>
+                            <state key="normal" image="sq_bili_replay"/>
+                            <connections>
+                                <action selector="replayBtnClick:" destination="-1" eventType="touchUpInside" id="5mk-Uq-hgQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="38" secondAttribute="bottom" constant="20" id="1Jy-fw-ZY6"/>
+                        <constraint firstItem="vgQ-Je-5Md" firstAttribute="centerX" secondItem="54" secondAttribute="centerX" id="3vD-WD-eIY"/>
+                        <constraint firstAttribute="trailing" secondItem="38" secondAttribute="trailing" id="JOF-MC-SPO"/>
+                        <constraint firstItem="UWk-0O-8Qx" firstAttribute="leading" secondItem="54" secondAttribute="leading" id="N7C-Ij-E1a"/>
+                        <constraint firstItem="38" firstAttribute="leading" secondItem="54" secondAttribute="leading" id="Re7-lF-km9"/>
+                        <constraint firstItem="dez-i2-Pff" firstAttribute="centerY" secondItem="54" secondAttribute="centerY" id="WVF-y5-1V6"/>
+                        <constraint firstItem="dez-i2-Pff" firstAttribute="centerX" secondItem="54" secondAttribute="centerX" id="hxv-Rp-hCP"/>
+                        <constraint firstItem="UWk-0O-8Qx" firstAttribute="top" secondItem="54" secondAttribute="top" constant="20" id="nWj-Kl-zH8"/>
+                        <constraint firstItem="vgQ-Je-5Md" firstAttribute="centerY" secondItem="54" secondAttribute="centerY" id="t6F-ED-Jjf"/>
+                    </constraints>
+                    <connections>
+                        <action selector="onClickOverlay:" destination="-1" eventType="touchDown" id="58"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="54" firstAttribute="top" secondItem="6" secondAttribute="top" id="6ZP-CE-KUF"/>
+                <constraint firstAttribute="bottom" secondItem="54" secondAttribute="bottom" id="DqR-xT-9CX"/>
+                <constraint firstAttribute="trailing" secondItem="54" secondAttribute="trailing" id="Gcz-qm-nxE"/>
+                <constraint firstItem="54" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="mSx-Gv-t7x"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <action selector="onClickMediaControl:" destination="-1" eventType="touchDown" id="59"/>
+                <outlet property="audioBGimageView" destination="dez-i2-Pff" id="373-FL-UXH"/>
+                <outlet property="bottomPanel" destination="38" id="50"/>
+                <outlet property="currentTimeLabel" destination="43" id="60"/>
+                <outlet property="fullScreenBtn" destination="PVt-gj-80R" id="qIK-Z3-RNm"/>
+                <outlet property="mediaProgressSlider" destination="42" id="64"/>
+                <outlet property="overlayPanel" destination="54" id="106"/>
+                <outlet property="pauseButton" destination="41" id="65"/>
+                <outlet property="playButton" destination="40" id="66"/>
+                <outlet property="rePlayBtn" destination="vgQ-Je-5Md" id="TH0-W4-Mdr"/>
+                <outlet property="totalDurationLabel" destination="44" id="63"/>
+            </connections>
+            <point key="canvasLocation" x="568" y="316"/>
+        </view>
+        <navigationItem title="Title" id="wNK-Og-f4q"/>
+    </objects>
+    <resources>
+        <image name="sq_bili_close" width="11.5" height="11.5"/>
+        <image name="sq_bili_pause" width="12.5" height="14.5"/>
+        <image name="sq_bili_play" width="14" height="17"/>
+        <image name="sq_bili_replay" width="89.5" height="98.5"/>
+        <image name="sq_ijk_audio" width="119.5" height="119.5"/>
+    </resources>
+</document>

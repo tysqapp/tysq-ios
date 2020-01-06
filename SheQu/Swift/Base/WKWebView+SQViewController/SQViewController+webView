@@ -1,0 +1,15 @@
+//
+//  SQViewController+webView.swift
+//  SheQu
+//
+//  Created by gm on 2019/4/19.
+//  Copyright © 2019 sheQun. All rights reserved.
+//
+
+import UIKit
+
+extension SQViewController {
+    
+    
+    
+}

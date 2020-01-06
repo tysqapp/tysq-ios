@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>665295079789-pu0idud1o64s97c4th9smaggtugnt88t.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.665295079789-pu0idud1o64s97c4th9smaggtugnt88t</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDa4TdAQwSA4Xd0oIYKO-h9-KzG2noCtNA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>665295079789</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.tysq.app.ios</string>
+	<key>PROJECT_ID</key>
+	<string>tianyu-shequ</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tianyu-shequ.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:665295079789:ios:440a65afc3f410d27c3264</string>
+	<key>DATABASE_URL</key>
+	<string>https://tianyu-shequ.firebaseio.com</string>
+</dict>
+</plist>
